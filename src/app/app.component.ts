@@ -11,6 +11,7 @@ import { AppHoverComponent } from "./app-hover/app-hover.component";
 import { ContactComponent } from "./contact/contact.component";
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { RegistrationFormComponent } from "./registration-form/registration-form.component";
+import { PostsComponent } from "./posts/posts.component";
 
 
 
@@ -22,7 +23,7 @@ import { RegistrationFormComponent } from "./registration-form/registration-form
     LifeCycleComponent, CommonModule,
     RouterModule, CustomsliderComponent,
     HoverHighlightDirective, AppHoverComponent,
-    FeedbackFormComponent, RegistrationFormComponent],
+    FeedbackFormComponent, RegistrationFormComponent, PostsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
