@@ -1,0 +1,50 @@
+<h2> Template-Driven Form </h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" autocomplete="off">
+    <div class="form-group">
+        <label for="firstName" class="label">FirstName</label><br>
+        <input 
+            ngModel 
+            name="firstName" 
+            #firstName="ngModel" 
+            type="text" 
+            id="firstName" 
+            placeholder="John" 
+            minlength="3" 
+            required> 
+        <div *ngIf="firstName.invalid && firstName.touched" class="error">
+            <div *ngIf="firstName.errors?.['required']">FirstName is required</div>
+            <div *ngIf="firstName.errors?.['minlength']">minimum should be 3 characters</div>
+        </div>
+        <br>
+
+        <label for="email" class="label">E-Mail</label><br>
+        <input 
+            ngModel 
+            name="email"  
+            #email="ngModel" 
+            type="email" 
+            id="email" 
+            placeholder="abc@gmail.com" 
+            email
+            required>
+        <div *ngIf="email.invalid && email.touched" class="error">
+            <div  *ngIf="email.errors?.['required']">E-mail is required</div>
+            <div  *ngIf="email.errors?.['email']">Please Enter a valid email.</div>
+        </div>
+        <br>
+    </div>
+
+    <div class="form-group">
+        <label for="comment" class="label">Comment</label><br>
+        <textarea 
+            ngModel
+            name="comment"
+            id="comment" 
+            class="form-control" 
+            placeholder="Type your comments here">
+        </textarea>
+    </div>
+
+    <button [disabled]="myForm.invalid" class="btn btn-primary">Submit</button>
+
+</form>

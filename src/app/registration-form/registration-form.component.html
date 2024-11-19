@@ -1,0 +1,44 @@
+<h2>Reactive Forms</h2>
+
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div>
+        <label for="firstName" class="">FirstName:</label >
+        <input type="text" id="FirstName" placeholder="Enter Your first Name" formControlName="firstName">
+        <div *ngIf="registrationForm.get('firstName')?.invalid && registrationForm.get('firstName')?.touched" class="error">
+            <div *ngIf="registrationForm.get('firstName')?.errors?.['required']">First Name is required</div>
+        </div>
+    </div>
+
+    <div>
+        <label for="lastName" class="">LastName:</label>
+        <input type="text" id="lastName" placeholder="Enter Your last Name" formControlName="lastName">
+        <div *ngIf="registrationForm.get('lastName')?.invalid && registrationForm.get('lastName')?.touched" class="error">
+            <div *ngIf="registrationForm.get('lastName')?.errors?.['required']">Last Name is required</div>
+        </div>
+    </div>
+
+    <div>
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" placeholder="Enter your E-mail" formControlName="email">
+        <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="error">
+            <div *ngIf="registrationForm.get('email')?.errors?.['required']">E-mail is required</div>
+            <div *ngIf="registrationForm.get('email')?.errors?.['email']">Invalid email format</div>
+        </div>
+    </div>
+
+    <div formArrayName="addresses">
+        <label>Addresses:</label>
+        <div *ngFor="let address of addresses.controls; let i = index" [formGroupName]="i">
+            <input type="text" formControlName="street" placeholder="Street">
+            <input type="text" formControlName="city" placeholder="City">
+            <input type="text" formControlName="zip" placeholder="ZIP Code">
+            <button (click)="removeAddress(i)">Remove</button>
+            <div *ngIf="address.get('street')?.invalid && address.get('street')?.touched" class="error">
+                <div *ngIf="address.get('street')?.errors?.['required']">Street is Required</div>
+            </div>
+        </div>
+        <button (click)="addAddress()">Add Address</button>
+    </div>
+
+    <button [disabled]="registrationForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,10 @@
+<div>
+    <button (click)="openPopup()">Click Me !</button>
+    <div class="popup" *ngIf="showPopup">
+      <div class="popup-content">
+        <span class="close" (click)="closePopup()">×</span>
+        <p>Welcome to Angular!</p>
+      </div>
+    </div>
+  </div>
+  

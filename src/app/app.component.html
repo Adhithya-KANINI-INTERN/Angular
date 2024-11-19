@@ -1,0 +1,54 @@
+<div>
+  <h2>Hello World</h2>
+  <p>First Angular App</p>
+</div>
+<div>
+  <app-greeting></app-greeting>
+</div>
+<div>
+  <app-popup-message></app-popup-message>
+</div>
+<br><hr>
+<div>
+  <app-customslider [sliderValue]="50"></app-customslider>
+</div>
+<br><hr>
+<div>
+  <h2>Welcome to Angular</h2>
+  <input type="text" [(ngModel)]="value" placeholder="Type Here"/> 
+  <button (click)="onShowHide()">SHOW / HIDE</button>
+  <br>
+  <app-life-cycle [value]="value" *ngIf="showLifeCycle"></app-life-cycle>
+  <br><hr>
+</div>
+<br><hr>
+<div class="menu-header">
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active-link" >Home</a></li>
+    <li><a routerLink="/abouth" routerLinkActive="active-link">About</a></li>
+    <li><a routerLink="/blog" routerLinkActive="active-link">Blog</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active-link">Contact</a></li>
+    <li><a [routerLink]="['/input', 'Value']"routerLinkActive="active-link">Input</a></li>
+    <li><a routerLink="lazyloading" routerLinkActive="active-link">lazyLoading</a></li>
+  </ul>
+</div>
+<br><hr>
+<router-outlet></router-outlet>
+<div>
+  <h2>Hover over the box below:</h2>
+  <div appHoverHighlight style="width: 200px; height: 100px; border: 1px solid #ccc;">
+    Hover over this box to see the background color change.
+  </div>
+</div>
+<div>
+  <app-app-hover></app-app-hover>
+</div>
+<br><hr>
+<div>
+  <app-feedback-form></app-feedback-form>
+</div>
+<br><hr>
+<div>
+  <app-registration-form></app-registration-form>
+</div>
+<br><hr>
