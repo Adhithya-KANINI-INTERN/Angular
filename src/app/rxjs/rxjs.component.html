@@ -1,0 +1,22 @@
+<h1>RxJS Demo</h1>
+<div>
+  <input
+    type="number"
+    placeholder="Enter the number of users"
+    [(ngModel)]="limit"
+  />
+  <button (click)="fetchUsers()">Submit</button>
+</div>
+
+<div *ngIf="users.length > 0">
+  <h3>Fetched Users:</h3>
+  <ul>
+    <li *ngFor="let user of users">
+      <strong>{{ user.name }}</strong> - {{ user.email }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="users.length === 0 && limit > 0">
+  <p>No users fetched yet. Try entering a different number.</p>
+</div>

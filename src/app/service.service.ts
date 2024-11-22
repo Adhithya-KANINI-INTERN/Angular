@@ -18,4 +18,7 @@ export class ServiceService {
   getusers(limit: number): Observable<any> {
     return this.http.get(`${this.api}/users?_limit=${limit}`);
   } 
+
+  
+
 }
