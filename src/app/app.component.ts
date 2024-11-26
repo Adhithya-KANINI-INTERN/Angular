@@ -13,6 +13,8 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { RegistrationFormComponent } from "./registration-form/registration-form.component";
 import { PostsComponent } from "./posts/posts.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
+import { SenderComponent } from "./sender/sender.component";
+import { ReceiverComponent } from "./receiver/receiver.component";
 
 
 
@@ -24,8 +26,8 @@ import { RxjsComponent } from "./rxjs/rxjs.component";
     LifeCycleComponent, CommonModule,
     RouterModule, CustomsliderComponent,
     HoverHighlightDirective, AppHoverComponent,
-    FeedbackFormComponent, RegistrationFormComponent, 
-    PostsComponent, RxjsComponent],
+    FeedbackFormComponent, RegistrationFormComponent,
+    PostsComponent, RxjsComponent, SenderComponent, ReceiverComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
